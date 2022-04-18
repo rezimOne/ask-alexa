@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderComponent :logoRoche="images.logoRoche"/>
     <div class="components">
+      <HeaderComponent :logoRoche="images.logoRoche"/>
       <transition name="home-page">
         <HomePage v-if="!isShowCard"
           :logoAlexa="images.logoAlexa"
@@ -13,24 +13,31 @@
         @showCards="showCards"
         @hideCards="hideCards"
       />
-      <transition name="fade-cards">
-        <section class="cards-wrapper" v-if="isShowCard">
-          <QuestionCard
-            v-for="(question, index) in questions"
-            :key="index"
-            :index="index"
-            :question="question"
-            @setQuestion="showQuestion"
-            :questionMark="images.questionMark"
+      <div class="login-window" v-if="isNotReady" @click="changeState">
+        <img :src="images.sayIcon"/>
+        Alexa, ask Pavexa
+      </div>
+      <div v-else>
+        <transition name="fade-cards">
+          <section class="cards-wrapper" v-if="isShowCard">
+            <QuestionCard
+              v-for="(question, index) in questions"
+              :key="index"
+              :index="index"
+              :question="question"
+              @setQuestion="showQuestion"
+              :questionMark="images.questionMark"
+            />
+          </section>
+        </transition>
+        <span>Pavexa is ready!</span>
+        <transition name="fade-textfield">
+          <TextfieldComponent
+            v-if="isShowTextfield"
+            :currentQuestion="currentQuestion"
           />
-        </section>
-      </transition>
-      <transition name="fade-textfield">
-        <TextfieldComponent
-          v-if="isShowTextfield"
-          :currentQuestion="currentQuestion"
-        />
-      </transition>
+        </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -51,12 +58,14 @@ export default {
       currentQuestion: 'choose question',
       isShowCard: false,
       isShowTextfield: false,
+      isNotReady: true,
       images: {
         logoRoche: require('./assets/Roche_Logo_800px_Blue_RGB.svg'),
         logoAlexa: require('./assets/logoAlexa1.png'),
         logoActemra: require('./assets/logoActemra1.png'),
         questionMark: require('./assets/questionMark.png'),
-        digitalFace: require('./assets/robotFace4.png')
+        digitalFace: require('./assets/robotFace4.png'),
+        sayIcon: require('./assets/speaking.png'),
       }
     }
   },
@@ -71,17 +80,24 @@ export default {
   methods: {
     showCards(event) {
       this.isShowCard = event;
-      this.isShowTextfield = event
+      this.isShowTextfield = event;
+      setTimeout(() =>
+        console.log('Pavexa is ready!'), 4000
+      );
     },
     hideCards(event) {
       if(this.isShowCard){
         this.isShowCard = event;
         this.isShowTextfield = event;
         this.currentQuestion = 'choose question';
+        this.isNotReady = true;
       }else console.log('PRESS START');
     },
     showQuestion(event) {
-      this.currentQuestion = `Alexa, ask Pavexa ${event}`;
+      this.currentQuestion = event;
+    },
+    changeState(){
+      this.isNotReady = !this.isNotReady;
     }
   },
 }
@@ -90,7 +106,7 @@ export default {
 <style lang="scss">
 @import './assets/styles.scss';
 body {
-  background-color: $blueSetColor1;
+  background-color: black;
   padding: 0;
   margin: 0;
 }
@@ -99,33 +115,55 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $blueSetColor4;
-  background-color: $blueSetColor1;
-  padding: 1.5rem;
+  margin: 0 auto;
+  /*ipad pro 11inch 3rd gen*/
+  width: 834px;
+  height: 1194px;
+  -webkit-min-device-pixel-ratio: 2;
+}
+.login-window {
+  display: flex;
+  justify-content: space-around;
+  font-size: 3.5rem;
+  font-weight: 600;
+  width: 70%;
+  height: 100px;
+  margin: 0 auto;
+  cursor: pointer;
+  user-select: none;
+  img {
+    height: 80px;
+  }
 }
 .components {
-  height: 89vh;
-  background-color: $blueSetColor1;
   position: relative;
+  height: 100%;
+  background-color: $blueSetColor1;
+  color: $blueSetColor4;
+  top: 0;
+  overflow: hidden;
+  border-radius: 40px;
+  span {
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
 }
 .cards-wrapper {
   height: fit-content;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 750px;
+  width: 85%;
   align-content: center;
   justify-content: center;
-  gap: 2rem;
-  padding: 10px;
+  gap: 1.2rem;
   position: absolute;
-  bottom: 200px;
+  bottom: 210px;
   left: 50%;
   transform: translate(-50%, 0);
 }
 .fade-cards-enter-active,
-.fade-textfield-enter-active
-{
+.fade-textfield-enter-active {
   transition: opacity 0.7s ease-out;
 }
 .fade-textfield-enter,

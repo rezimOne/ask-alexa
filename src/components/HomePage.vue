@@ -19,7 +19,7 @@ export default {
   props: { logoAlexa: String, logoActemra: String, faceImage: String },
   data() {
     return {
-      message: "Hello, I'm Pavexa. Your virtual liflet."
+      message: "Hello, I'm Pavexa"
     }
   }
 }
@@ -29,16 +29,16 @@ export default {
 .wrapper {
   // border: 3px solid $blueSetColor3;
   overflow: hidden;
-  margin-top: 30px;
   width: 86%;
   height: 70%;
   position: absolute;
+  z-index: 1;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: $blueSetColor2;
   border-radius: 40px;
   footer {
-    border-top: 5px solid $blueSetColor1;
+    border-top: 8px solid $blueSetColor1;
     width: 100%;
     height: 80px;
     position: absolute;

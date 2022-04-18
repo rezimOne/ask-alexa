@@ -32,11 +32,11 @@ export default {
   user-select: none;
   display: flex;
   align-items: center;
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   background-color: $blueSetColor2;
   outline: none;
-  border-radius: 50px;
+  border-radius: 40px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   transition: 0.2s all;
   p {

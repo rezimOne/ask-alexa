@@ -32,11 +32,11 @@ export default {
 @import '../assets/styles.scss';
  .navbar-wrapper {
   background-color: $blueSetColor2;
-  height: 160px;
-  width: 440px;
+  height: 140px;
+  width: 420px;
   position: absolute;
-  border-radius: 50px;
-  bottom: 0px;
+  border-radius: 40px;
+  bottom: 20px;
   left: 50%;
   transform: translate(-50%, 0);
   display: flex;
@@ -47,23 +47,23 @@ export default {
   flex-direction: row;
   padding: 5px;
   height: fit-content;
-  gap: 2rem;
+  gap: 1.2rem;
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
   justify-content: center;
 }
 button {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #ffffff;
   cursor: pointer;
   user-select: none;
   display: block;
-  height: 120px;
+  height: 110px;
   width: 180px;
   border: none;
-  border-radius: 50px;
+  border-radius: 40px;
   background-color: $blueSetColor3;
+  color: $blueSetColor4;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   transition: 0.3s all;
   &:active {
