@@ -13,31 +13,25 @@
         @showCards="showCards"
         @hideCards="hideCards"
       />
-      <div class="login-window" v-if="isNotReady" @click="changeState">
-        <img :src="images.sayIcon"/>
-        Alexa, ask Pavexa
-      </div>
-      <div v-else>
-        <transition name="fade-cards">
-          <section class="cards-wrapper" v-if="isShowCard">
-            <QuestionCard
-              v-for="(question, index) in questions"
-              :key="index"
-              :index="index"
-              :question="question"
-              @setQuestion="showQuestion"
-              :questionMark="images.questionMark"
-            />
-          </section>
-        </transition>
-        <span>Pavexa is ready!</span>
-        <transition name="fade-textfield">
-          <TextfieldComponent
-            v-if="isShowTextfield"
-            :currentQuestion="currentQuestion"
+      <transition name="fade-cards">
+        <section class="cards-wrapper" v-if="isShowCard">
+          <QuestionCard
+            v-for="(question, index) in questions"
+            :key="index"
+            :index="index"
+            :question="question"
+            @setQuestion="showQuestion"
+            :questionMark="images.questionMark"
           />
-        </transition>
-      </div>
+        </section>
+      </transition>
+      <span>[say] Alexa ask Pavexa</span>
+      <transition name="fade-textfield">
+        <TextfieldComponent
+          v-if="isShowTextfield"
+          :currentQuestion="currentQuestion"
+        />
+      </transition>
     </div>
   </div>
 </template>
@@ -55,7 +49,7 @@ export default {
   data(){
     return {
       questions: [],
-      currentQuestion: 'choose question',
+      currentQuestion: '[choose question]',
       isShowCard: false,
       isShowTextfield: false,
       isNotReady: true,
@@ -65,7 +59,6 @@ export default {
         logoActemra: require('./assets/logoActemra1.png'),
         questionMark: require('./assets/questionMark.png'),
         digitalFace: require('./assets/robotFace4.png'),
-        sayIcon: require('./assets/speaking.png'),
       }
     }
   },
@@ -81,15 +74,12 @@ export default {
     showCards(event) {
       this.isShowCard = event;
       this.isShowTextfield = event;
-      setTimeout(() =>
-        console.log('Pavexa is ready!'), 4000
-      );
     },
     hideCards(event) {
       if(this.isShowCard){
         this.isShowCard = event;
         this.isShowTextfield = event;
-        this.currentQuestion = 'choose question';
+        this.currentQuestion = '[choose question]';
         this.isNotReady = true;
       }else console.log('PRESS START');
     },

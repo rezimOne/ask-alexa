@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'QuestionCard',
-  props: ['index', 'question', 'questionMark'],
+  props: { index: Number, question: String, questionMark: String },
   data() {
     return {
       isOpen: false,
@@ -18,7 +18,7 @@ export default {
   methods: {
     showQuestion(){
       this.$emit('setQuestion', this.question)
-      console.log(this.question)
+      // console.log(this.question)
     }
   }
 }
