@@ -21,18 +21,18 @@ export default {
   justify-content: center;
   align-items: center;
   width: 85%;
-  height: 350px;
+  height: 320px;
   background-color: $blueSetColor3;
   border-radius: 40px;
   position: absolute;
-  top: 210px;
+  top: 190px;
   left: 50%;
   transform: translate(-50%, 0);
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   user-select: none;
   span {
     max-width: 90%;
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     font-weight: 600;
   }
 }

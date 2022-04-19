@@ -24,7 +24,7 @@
           />
         </section>
       </transition>
-      <span id="firstSay">"say: Alexa ask Pavexa..."</span>
+      <span id="firstSay">say: "Alexa ask Pavexa..."</span>
       <transition name="fade-textfield">
         <TextfieldComponent
           v-if="isShowTextfield"
@@ -96,9 +96,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin: 0 auto;
-  /*ipad pro 11inch 3rd gen*/
+
   width: 834px;
-  height: 100vh;
+  height: 1100px;
   -webkit-min-device-pixel-ratio: 2;
 }
 .components {
@@ -110,7 +110,7 @@ body {
   overflow: hidden;
   border-radius: 40px;
   #firstSay {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 600;
     font-style: italic;
   }
@@ -125,7 +125,7 @@ body {
   justify-content: center;
   gap: 1.2rem;
   position: absolute;
-  bottom: 210px;
+  bottom: 190px;
   left: 50%;
   transform: translate(-50%, 0);
 }
