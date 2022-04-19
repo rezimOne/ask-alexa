@@ -1,9 +1,8 @@
 <template>
   <div class="wrapper">
     <img class="face-image" :src="faceImage"/>
-    <header></header>
     <section>
-      <p>{{ message}}</p>
+      <p>{{ message }}</p>
     </section>
     <footer>
       <div class="logo-wrapper">
@@ -27,9 +26,8 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/styles.scss';
 .wrapper {
-  // border: 3px solid $blueSetColor3;
   overflow: hidden;
-  width: 86%;
+  width: 85%;
   height: 70%;
   position: absolute;
   z-index: 1;
@@ -64,7 +62,7 @@ export default {
     align-items: center;
     position: absolute;
     height: 80%;
-    width: 90%;
+    width: 80%;
     top: 50px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -78,10 +76,10 @@ export default {
 }
 .face-image {
   opacity: 0.5;
-  height: 920px;
   position: relative;
-  right: 385px;
-  bottom: 250px;
-  }
+  right: 430px;
+  bottom: 340px;
+  height: 140%;
+}
 
 </style>

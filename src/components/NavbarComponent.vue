@@ -1,8 +1,7 @@
 <template>
   <div class="navbar-wrapper">
     <div class="control-buttons">
-      <button @click="showCards">START</button>
-      <button @click="hideCards">ABOUT</button>
+      <button @click="showCards">{{ isCardOpen ? 'QUIT' : 'START' }}</button>
     </div>
   </div>
 </template>
@@ -17,13 +16,9 @@ export default {
   },
   methods: {
     showCards(){
-      this.isCardOpen = true;
+      this.isCardOpen = !this.isCardOpen;
       this.$emit('showCards', this.isCardOpen);
     },
-    hideCards(){
-      this.isCardOpen = false;
-      this.$emit('hideCards', this.isCardOpen);
-    }
   }
 }
 </script>
@@ -54,7 +49,7 @@ export default {
 }
 button {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 800;
   cursor: pointer;
   user-select: none;
   display: block;
@@ -65,12 +60,9 @@ button {
   background-color: $blueSetColor3;
   color: $blueSetColor4;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-  transition: 0.3s all;
+  transition: 0.2s all;
   &:active {
-    transform: scale(0.98)
-  }
-  &:hover {
-    background-color: $blueSetColor5;
+    transform: scale(0.95)
   }
 }
 </style>

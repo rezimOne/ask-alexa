@@ -20,7 +20,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 92%;
+  width: 85%;
   height: 350px;
   background-color: $blueSetColor3;
   border-radius: 40px;
@@ -31,10 +31,11 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   user-select: none;
   span {
-    max-width: 95%;
+    max-width: 90%;
     font-size: 3.5rem;
     font-weight: 600;
   }
+}
 .slide-fade-enter-active {
   transition: all .3s ease;
 }
@@ -45,7 +46,5 @@ export default {
 /* .slide-fade-leave-active for <2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
-}
-
 }
 </style>

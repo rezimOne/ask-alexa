@@ -28,7 +28,6 @@ export default {
 @import '../assets/styles.scss';
 .card {
   box-sizing: border-box;
-  // cursor: pointer;
   user-select: none;
   display: flex;
   align-items: center;
@@ -45,17 +44,10 @@ export default {
   img {
     height: 70px;
     margin: 0 auto;
-    opacity: 0.4;
+    opacity: 0.5;
   }
-
   &:active {
-    transform: scale(0.98);
+    transform: scale(0.95);
   }
-  /*
-  &:hover {
-    // transform: scale(1.06);
-    background-color: $blueSetColor3;
-  }
-  */
 }
 </style>

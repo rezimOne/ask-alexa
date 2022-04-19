@@ -11,7 +11,6 @@
       </transition>
       <NavbarComponent
         @showCards="showCards"
-        @hideCards="hideCards"
       />
       <transition name="fade-cards">
         <section class="cards-wrapper" v-if="isShowCard">
@@ -25,7 +24,7 @@
           />
         </section>
       </transition>
-      <span>[say] Alexa ask Pavexa</span>
+      <span id="firstSay">"say: Alexa ask Pavexa..."</span>
       <transition name="fade-textfield">
         <TextfieldComponent
           v-if="isShowTextfield"
@@ -52,13 +51,12 @@ export default {
       currentQuestion: '[choose question]',
       isShowCard: false,
       isShowTextfield: false,
-      isNotReady: true,
       images: {
         logoRoche: require('./assets/Roche_Logo_800px_Blue_RGB.svg'),
         logoAlexa: require('./assets/logoAlexa1.png'),
         logoActemra: require('./assets/logoActemra1.png'),
         questionMark: require('./assets/questionMark.png'),
-        digitalFace: require('./assets/robotFace4.png'),
+        digitalFace: require('./assets/robotFace4.png')
       }
     }
   },
@@ -73,21 +71,13 @@ export default {
   methods: {
     showCards(event) {
       this.isShowCard = event;
+      if (this.isShowCard) {
+        this.currentQuestion = 'Choose the question by clicking one of the buttons below';
+      }
       this.isShowTextfield = event;
-    },
-    hideCards(event) {
-      if(this.isShowCard){
-        this.isShowCard = event;
-        this.isShowTextfield = event;
-        this.currentQuestion = '[choose question]';
-        this.isNotReady = true;
-      }else console.log('PRESS START');
     },
     showQuestion(event) {
       this.currentQuestion = event;
-    },
-    changeState(){
-      this.isNotReady = !this.isNotReady;
     }
   },
 }
@@ -108,22 +98,8 @@ body {
   margin: 0 auto;
   /*ipad pro 11inch 3rd gen*/
   width: 834px;
-  height: 1194px;
+  height: 100vh;
   -webkit-min-device-pixel-ratio: 2;
-}
-.login-window {
-  display: flex;
-  justify-content: space-around;
-  font-size: 3.5rem;
-  font-weight: 600;
-  width: 70%;
-  height: 100px;
-  margin: 0 auto;
-  cursor: pointer;
-  user-select: none;
-  img {
-    height: 80px;
-  }
 }
 .components {
   position: relative;
@@ -133,9 +109,10 @@ body {
   top: 0;
   overflow: hidden;
   border-radius: 40px;
-  span {
+  #firstSay {
     font-size: 3.5rem;
     font-weight: 600;
+    font-style: italic;
   }
 }
 .cards-wrapper {
