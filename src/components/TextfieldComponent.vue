@@ -1,7 +1,9 @@
 <template>
   <div class="textfield">
+    <img id="icon-say" :src="iconSay" v-show="isActive"/>
+    <img id="background-img" :src="scanlines"/>
     <transition name="slide-fade" mode="out-in">
-      <span :key="currentQuestion">{{ currentQuestion }}</span>
+      <span :key="currentQuestion" @click="myFun">{{ currentQuestion }}</span>
     </transition>
   </div>
 </template>
@@ -9,7 +11,22 @@
 <script>
 export default {
   name: 'TextfieldComponent',
-  props: { currentQuestion: String },
+  props: { currentQuestion: String, iconSay: String, scanlines: String},
+  data(){
+    return {
+      isActive: false,
+    }
+  },
+  methods: {
+    showSayIcon() {
+      this.isActive = !this.isActive;
+    }
+  },
+  updated(){
+    if(!this.isActive){
+      this.showSayIcon();
+    }
+  }
 }
 </script>
 
@@ -23,17 +40,34 @@ export default {
   width: 85%;
   height: 320px;
   background-color: $blueSetColor3;
+  border: 3px solid $blueSetColor4;
   border-radius: 40px;
   position: absolute;
   top: 190px;
   left: 50%;
   transform: translate(-50%, 0);
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  box-shadow: inset 4px 10px 20px #000000aa;
   user-select: none;
+  overflow: hidden;
   span {
     max-width: 90%;
     font-size: 3.3rem;
     font-weight: 600;
+    z-index: -2;
+  }
+  #icon-say {
+    height: 80px;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+  }
+  #background-img {
+    top: 20;
+    height: 110%;
+    width: 110%;
+    opacity: .2;
+    position: absolute;
+    z-index: -1;
   }
 }
 .slide-fade-enter-active {

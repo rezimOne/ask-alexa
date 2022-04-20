@@ -29,6 +29,8 @@
         <TextfieldComponent
           v-if="isShowTextfield"
           :currentQuestion="currentQuestion"
+          :iconSay="images.iconSay"
+          :scanlines="images.scanlines"
         />
       </transition>
     </div>
@@ -48,7 +50,7 @@ export default {
   data(){
     return {
       questions: [],
-      currentQuestion: '[choose question]',
+      currentQuestion: '',
       isShowCard: false,
       isShowTextfield: false,
       images: {
@@ -56,7 +58,9 @@ export default {
         logoAlexa: require('./assets/logoAlexa1.png'),
         logoActemra: require('./assets/logoActemra1.png'),
         questionMark: require('./assets/questionMark.png'),
-        digitalFace: require('./assets/robotFace4.png')
+        digitalFace: require('./assets/robotFace4.png'),
+        iconSay: require('./assets/say-icon2.png'),
+        scanlines: require('./assets/scanlines.png')
       }
     }
   },
