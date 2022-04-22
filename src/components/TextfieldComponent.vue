@@ -1,9 +1,8 @@
 <template>
   <div class="textfield">
     <img id="icon-say" :src="iconSay" v-show="isActive"/>
-    <img id="background-img" :src="scanlines"/>
     <transition name="slide-fade" mode="out-in">
-      <span :key="currentQuestion" @click="myFun">{{ currentQuestion }}</span>
+      <span :key="currentQuestion">{{ currentQuestion }}</span>
     </transition>
   </div>
 </template>
@@ -11,7 +10,7 @@
 <script>
 export default {
   name: 'TextfieldComponent',
-  props: { currentQuestion: String, iconSay: String, scanlines: String},
+  props: { currentQuestion: String, iconSay: String },
   data(){
     return {
       isActive: false,
@@ -60,14 +59,6 @@ export default {
     position: absolute;
     top: -2px;
     left: -2px;
-  }
-  #background-img {
-    top: 20;
-    height: 110%;
-    width: 110%;
-    opacity: .2;
-    position: absolute;
-    z-index: -1;
   }
 }
 .slide-fade-enter-active {

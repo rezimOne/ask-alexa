@@ -2,7 +2,8 @@
   <div class="wrapper">
     <img class="face-image" :src="faceImage"/>
     <section>
-      <p>{{ message }}</p>
+      <h1>{{ message }}</h1>
+      <h2>{{ description }}</h2>
     </section>
     <footer>
       <div class="logo-wrapper">
@@ -18,7 +19,8 @@ export default {
   props: { logoAlexa: String, logoActemra: String, faceImage: String },
   data() {
     return {
-      message: "Hello, I'm Pavexa"
+      message: "Hello, I'm Pavexa",
+      description: "Your virtual leaflet"
     }
   }
 }
@@ -58,19 +60,21 @@ export default {
     }
   }
   section {
-    display: flex;
-    align-items: center;
     position: absolute;
-    height: 80%;
+    align-items: center;
     width: 80%;
-    top: 50px;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
-    p {
+    transform: translate(-50%, -50%);
+    h1 {
       font-size: 5rem;
       font-weight: 700;
-      line-height: 100px;
       line-height: 110%;
+      margin: 0;
+    }
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
     }
   }
 }

@@ -24,13 +24,12 @@
           />
         </section>
       </transition>
-      <span id="firstSay">say: "Alexa ask Pavexa..."</span>
+      <span id="firstSay">Say: "Alexa ask Pavexa..."</span>
       <transition name="fade-textfield">
         <TextfieldComponent
           v-if="isShowTextfield"
           :currentQuestion="currentQuestion"
           :iconSay="images.iconSay"
-          :scanlines="images.scanlines"
         />
       </transition>
     </div>
@@ -46,7 +45,7 @@ import HomePage from './components/HomePage.vue'
 import HeaderComponent from './components/HeaderComponent.vue'
 export default {
   name: 'App',
-  components: { HeaderComponent, NavbarComponent, QuestionCard, TextfieldComponent, HomePage},
+  components: { HeaderComponent, NavbarComponent, QuestionCard, TextfieldComponent, HomePage },
   data(){
     return {
       questions: [],
@@ -60,7 +59,6 @@ export default {
         questionMark: require('./assets/questionMark.png'),
         digitalFace: require('./assets/robotFace4.png'),
         iconSay: require('./assets/say-icon2.png'),
-        scanlines: require('./assets/scanlines.png')
       }
     }
   },
@@ -76,7 +74,7 @@ export default {
     showCards(event) {
       this.isShowCard = event;
       if (this.isShowCard) {
-        this.currentQuestion = 'Choose the question by clicking one of the buttons below';
+        this.currentQuestion = '* Choose the question by clicking one of the buttons below';
       }
       this.isShowTextfield = event;
     },
@@ -109,7 +107,7 @@ body {
   position: relative;
   height: 100%;
   background-color: $blueSetColor1;
-  color: $blueSetColor4;
+  color: #ffffff;
   top: 0;
   overflow: hidden;
   border-radius: 40px;
@@ -117,6 +115,7 @@ body {
     font-size: 3.2rem;
     font-weight: 600;
     font-style: italic;
+    user-select: none;
   }
 }
 .cards-wrapper {
