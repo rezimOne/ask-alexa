@@ -24,12 +24,12 @@
           />
         </section>
       </transition>
-      <span id="firstSay">Say: "Alexa ask Pavexa..."</span>
       <transition name="fade-textfield">
         <TextfieldComponent
           v-if="isShowTextfield"
           :currentQuestion="currentQuestion"
           :iconSay="images.iconSay"
+          :userInstructions="userInstructions"
         />
       </transition>
     </div>
@@ -50,6 +50,7 @@ export default {
     return {
       questions: [],
       currentQuestion: '',
+      userInstructions: [],
       isShowCard: false,
       isShowTextfield: false,
       images: {
@@ -58,7 +59,7 @@ export default {
         logoActemra: require('./assets/logoActemra1.png'),
         questionMark: require('./assets/questionMark.png'),
         digitalFace: require('./assets/robotFace4.png'),
-        iconSay: require('./assets/say-icon2.png'),
+        iconSay: require('./assets/say-icon3.png'),
       }
     }
   },
@@ -66,6 +67,7 @@ export default {
     axios.get('./data.json')
     .then(res => {
       this.questions = res.data.questions;
+      this.userInstructions = res.data.userInstructions;
       console.log(this.questions);
     })
     .catch(err => console.log(err))
@@ -74,7 +76,7 @@ export default {
     showCards(event) {
       this.isShowCard = event;
       if (this.isShowCard) {
-        this.currentQuestion = '* Choose the question by clicking one of the buttons below';
+        this.currentQuestion = this.userInstructions[1];
       }
       this.isShowTextfield = event;
     },
@@ -99,8 +101,8 @@ body {
   text-align: center;
   margin: 0 auto;
 
-  width: 834px;
-  height: 1100px;
+  width: 768px;
+  height: 1024px;
   -webkit-min-device-pixel-ratio: 2;
 }
 .components {
@@ -113,7 +115,7 @@ body {
   border-radius: 40px;
   #firstSay {
     font-size: 3.2rem;
-    font-weight: 600;
+    font-weight: 700;
     font-style: italic;
     user-select: none;
   }
@@ -128,7 +130,7 @@ body {
   justify-content: center;
   gap: 1.2rem;
   position: absolute;
-  bottom: 190px;
+  bottom: 200px;
   left: 50%;
   transform: translate(-50%, 0);
 }

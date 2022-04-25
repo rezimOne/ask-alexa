@@ -14,5 +14,9 @@
     "I'm having breathing problems. Can it be because of Actemra?",
     "Are there any specific side effects of using Actemra in children?",
     "What should I do if I feel sick after using Actemra?"
+  ],
+  "userInstructions": [
+    "Alexa, ask Pavexa...",
+    "* Choose the question by clicking one of the buttons below and ask"
   ]
 }

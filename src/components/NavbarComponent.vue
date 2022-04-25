@@ -49,13 +49,13 @@ export default {
 }
 button {
   font-size: 1.6rem;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
   user-select: none;
   display: block;
   height: 110px;
   width: 180px;
-  border: none;
+  border: 10px solid #ffffff;
   border-radius: 40px;
   background-color: $blueSetColor3;
   color: #ffffff;

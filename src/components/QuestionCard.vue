@@ -44,7 +44,7 @@ export default {
   img {
     height: 70px;
     margin: 0 auto;
-    opacity: 0.5;
+    opacity: 0.7;
   }
   &:active {
     transform: scale(0.95);
