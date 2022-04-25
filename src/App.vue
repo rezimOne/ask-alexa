@@ -128,9 +128,9 @@ body {
   width: 85%;
   align-content: center;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.3rem;
   position: absolute;
-  bottom: 200px;
+  bottom: 192px;
   left: 50%;
   transform: translate(-50%, 0);
 }
