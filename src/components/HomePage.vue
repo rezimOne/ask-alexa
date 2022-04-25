@@ -51,6 +51,7 @@ export default {
       width: 70%;
       height: 100%;
       margin: 0 auto;
+      user-select: none;
     }
     #logoAlexa {
       height: 37px;
@@ -71,10 +72,12 @@ export default {
       font-weight: 700;
       line-height: 110%;
       margin: 0;
+      user-select: none;
     }
     h2 {
       font-size: 3rem;
       font-weight: 700;
+      user-select: none;
     }
   }
 }

@@ -1,7 +1,9 @@
 <template>
   <div class="textfield">
     <img id="icon-say" :src="iconSay" v-show="isActive"/>
-    <h1 v-show="isActive">{{ userInstructions[0] }}</h1>
+    <transition name="fade-header-text">
+      <h1 v-show="isActive">{{ userInstructions[0] }}</h1>
+    </transition>
     <transition name="slide-fade" mode="out-in">
       <span
         :key="currentQuestion"
@@ -84,6 +86,12 @@ export default {
     color: #d5eef7;
   }
 }
+.fade-header-text-enter-active{
+  transition: all 1s ease;
+}
+.fade-header-text-enter {
+  opacity: 0;
+}
 .slide-fade-enter-active {
   transition: all .3s ease;
 }
@@ -94,18 +102,5 @@ export default {
 /* .slide-fade-leave-active for <2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
-}
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 </style>
