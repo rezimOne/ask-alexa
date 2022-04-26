@@ -102,7 +102,7 @@ body {
   margin: 0 auto;
 
   width: 768px;
-  height: 1024px;
+  height: 974px;
   -webkit-min-device-pixel-ratio: 2;
 }
 .components {
@@ -130,7 +130,7 @@ body {
   justify-content: center;
   gap: 1.1rem;
   position: absolute;
-  bottom: 192px;
+  bottom: 182px;
   left: 50%;
   transform: translate(-50%, 0);
 }
