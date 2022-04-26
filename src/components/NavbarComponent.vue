@@ -42,9 +42,9 @@ export default {
   flex-direction: row;
   padding: 5px;
   height: fit-content;
-  gap: 1.2rem;
+  // gap: 1.2rem;
   margin: 0 auto;
-  width: 95%;
+  // width: 95%;
   justify-content: center;
 }
 button {
@@ -55,14 +55,14 @@ button {
   display: block;
   height: 102px;
   width: 180px;
-  border: 10px solid #ffffff;
+  border: 8px solid #ffffff;
   border-radius: 40px;
   background-color: $blueSetColor3;
   color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   transition: 0.2s all;
   &:active {
-    transform: scale(0.95)
+    transform: scale(0.9)
   }
 }
 </style>

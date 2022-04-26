@@ -100,17 +100,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   width: 768px;
-  height: 924px;
+  height: 1024px;
   -webkit-min-device-pixel-ratio: 2;
 }
 .components {
   position: relative;
-  height: 100%;
+  width: 92%;
+  height: 94%;
   background-color: $blueSetColor1;
   color: #ffffff;
-  top: 0;
+  border: 3px solid $blueSetColor3;
   overflow: hidden;
   border-radius: 40px;
   #firstSay {
@@ -125,12 +129,12 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 85%;
+  width: 90%;
   align-content: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.1rem;
   position: absolute;
-  bottom: 165px;
+  bottom: 19%;
   left: 50%;
   transform: translate(-50%, 0);
 }

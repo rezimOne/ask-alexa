@@ -50,7 +50,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 85%;
-  height: 300px;
+  height: 310px;
   background-color: $blueSetColor3;
   border: 3px solid $blueSetColor4;
   border-radius: 40px;
@@ -65,7 +65,7 @@ export default {
     // margin-top: 50px;
     position: relative;
     max-width: 90%;
-    font-size: 3.1rem;
+    font-size: 3rem;
     font-weight: 600;
 
   }
