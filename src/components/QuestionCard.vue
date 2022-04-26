@@ -31,8 +31,8 @@ export default {
   user-select: none;
   display: flex;
   align-items: center;
-  width: 110px;
-  height: 110px;
+  width: 105px;
+  height: 100px;
   background-color: $blueSetColor2;
   outline: none;
   border-radius: 40px;

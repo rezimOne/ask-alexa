@@ -102,7 +102,7 @@ body {
   margin: 0 auto;
 
   width: 768px;
-  height: 974px;
+  height: 924px;
   -webkit-min-device-pixel-ratio: 2;
 }
 .components {
@@ -128,9 +128,9 @@ body {
   width: 85%;
   align-content: center;
   justify-content: center;
-  gap: 1.1rem;
+  gap: 1rem;
   position: absolute;
-  bottom: 182px;
+  bottom: 165px;
   left: 50%;
   transform: translate(-50%, 0);
 }

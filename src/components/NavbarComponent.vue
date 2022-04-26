@@ -27,7 +27,7 @@ export default {
 @import '../assets/styles.scss';
  .navbar-wrapper {
   background-color: $blueSetColor2;
-  height: 140px;
+  height: 128px;
   width: 420px;
   position: absolute;
   border-radius: 40px;
@@ -53,7 +53,7 @@ button {
   cursor: pointer;
   user-select: none;
   display: block;
-  height: 110px;
+  height: 102px;
   width: 180px;
   border: 10px solid #ffffff;
   border-radius: 40px;
