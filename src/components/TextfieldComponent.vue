@@ -21,7 +21,6 @@ export default {
   data(){
     return {
       isActive: false,
-      marginTop: 50
     }
   },
   methods: {
@@ -31,7 +30,7 @@ export default {
   },
   computed: {
     marginTopChange: function() {
-      return this.isActive ? '40px' : 0;
+      return this.isActive ? '50px' : 0;
     }
   },
   beforeUpdate(){
@@ -49,7 +48,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: 90%;
   height: 310px;
   background-color: $blueSetColor3;
   border: 3px solid $blueSetColor4;
@@ -64,7 +63,7 @@ export default {
   span {
     // margin-top: 50px;
     position: relative;
-    max-width: 90%;
+    max-width: 92%;
     font-size: 3rem;
     font-weight: 600;
 
