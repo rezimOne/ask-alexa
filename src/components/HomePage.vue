@@ -84,7 +84,7 @@ export default {
 .face-image {
   opacity: 0.5;
   position: relative;
-  right: 430px;
+  right: 400px;
   bottom: 340px;
   height: 140%;
 }
