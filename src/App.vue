@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="components">
-      <HeaderComponent :logoRoche="images.logoRoche"/>
+      <HeaderComponent />
       <transition name="home-page">
         <HomePage v-if="!isShowCard"
           :logoAlexa="images.logoAlexa"
@@ -54,7 +54,6 @@ export default {
       isShowCard: false,
       isShowTextfield: false,
       images: {
-        logoRoche: require('./assets/Roche_Logo_800px_Blue_RGB.svg'),
         logoAlexa: require('./assets/logoAlexa1.png'),
         logoActemra: require('./assets/logoActemra1.png'),
         questionMark: require('./assets/questionMark.png'),

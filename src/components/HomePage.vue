@@ -19,7 +19,7 @@ export default {
   props: { logoAlexa: String, logoActemra: String, faceImage: String },
   data() {
     return {
-      message: "Hello, I'm Pavexa",
+      message: "Hello, I'm Lexa",
       description: "Your virtual leaflet"
     }
   }
