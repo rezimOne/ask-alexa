@@ -1,12 +1,12 @@
 <template>
   <header>
-    <img id="logoRoche" :src="logoRoche">
+    <!-- <img id="companyLogo" :src="companyLogo"> -->
   </header>
 </template>
 <script>
 export default {
   name: 'HeaderComponent',
-  props: { logoRoche: String }
+  // props: { companyLogo: String }
 }
 </script>
 <style lang="scss" scoped>
@@ -17,10 +17,10 @@ header {
   align-items: center;
   justify-content: center;
   background-color: $blueSetColor1;
-  #logoRoche {
-    user-select: none;
-    max-width: 100px;
-    height: 60px;
-  }
+  // #companyLogo{
+  //   user-select: none;
+  //   max-width: 100px;
+  //   height: 60px;
+  // }
 }
 </style>
